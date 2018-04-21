@@ -1,0 +1,42 @@
+<div class="hero-unit">
+<h1>Bikes</h1>
+
+
+
+<%= link_to("Add new category", {:action => 'add'}, :class => 'btn btn-mini btn-primary') %>
+
+<% if !flash[:notice].blank?  %>
+    <div class="alert alert-success" style="text-align: center;">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+
+
+<table class="table table-striped">
+    <tr class="info">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Available</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <% @bikes.each do |bike|  %>
+    <tr>
+        <td><%= bike.name %></td>
+        <td><%= bike.description %></td>
+        <td><%= bike.available %></td>
+        <td><%= bike.price %></td>
+    <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => bike.id}, :class => 'btn btn-xs btn-default') %>
+        <%= link_to("Edit", {:action => 'show', :id => bike.id}, :class => 'btn btn-xs btn-primary') %>
+        <%= link_to("Delete", {:action => 'show', :id => bike.id}, :class => 'btn btn-xs btn-danger') %>
+    </td>
+    </tr>
+
+    <% end %>
+
+</table>
+</div>
+
+

@@ -1,0 +1,19 @@
+<!-- simple partial for form -->
+<table class="table table-striped">
+    <tr>
+        <th><%= field.label(:name) %></th>
+        <th><%= field.text_field(:name) %></th>
+    </tr>
+    <tr>
+        <th><%= field.label(:available, "Is it available?") %></th>
+        <th><%= field.check_box(:available) %></th>
+    </tr>
+    <tr>
+        <th><%= field.label(:description) %></th>
+        <th><%= field.text_field(:description) %></th>
+    </tr>
+    <tr>
+        <th><%= field.label(:price) %></th>
+        <th><%= field.text_field(:price) %></th>
+    </tr>
+</table>
