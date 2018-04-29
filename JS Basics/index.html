@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+
+<html>
+    <!-- This website supports HTML5 -->
+    <!-- Tekst strony zawiera przykladowe zdarzenia zwiazane z mysza 
+        ktore zostana wykorzystane w projekcie np. zmiana wygladu strony na szary
+            czy przyblizanie tekstu gdy nacisniety przycisk myszy (np. menu)-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            footer { position: absolute; bottom: 0; }
+            .nav-left { float: left; }
+            table, th, td { border: 1px solid black;}
+            h1 { text-align: center; }
+            </style>
+        <title>Zadanie 1</title>
+    </head>
+    
+    <body>
+        
+        <nav class="nav-left">
+            <!-- just simple alert before leaving the page -->
+            <img alt="Logo - Polish-Japanese Academy of Information Technology"
+                src="https://lh6.ggpht.com/HqisYx9M5rnQuCJJlVgHgK2ZsoA0BtFbQTfzBv-_Sqa-00edrpv9cg6iZFi6xwXkDJQ=w300" style='width:35%;'
+                onmouseout="whereAreYouGoing()" >
+                <ul>
+                    <li><a href='about.html'>PodStrona1</a></li>
+                    <li><a href='about.html'>Podstrona2</a></li>
+                    <li><a href='about.html'>Podstrona3</a></li>
+                    <li><a href='about.html'>Podstrona4</a></li>
+                    <li><a href='about.html'>Podstrona5</a></li>
+                </ul>
+                </nav>
+        <div id="main-content">
+            <article>
+                <h1>Projekt</h1>
+
+                <form id="personalForm">
+                    <fieldset>
+                      <legend>Simple personal data form:</legend>
+                        First name:<br>
+                        <input type="text" name="firstname" id="firstnameID"><br>
+                        Last name:<br>
+                        <input type="text" name="lastname" id="lastnameID"><br><br>
+                        <input type="submit" onclick="validateForm()" value="Submit">
+                    </fieldset>
+                  </form>
+                  <!-- onclick nie jest najlepszym wyborem w formularzu-->
+
+                  <!-- Przyklad zoomowania-->
+                  <p onmousedown="changeFontSizeZoomIn()" onmouseup="changeFontSizeZoomOut()" id="textZoomID">Lorem ipsum dolor sit amet, consectetur
+                       adipiscing elit, sed do eiusmod tempor incididunt 
+                       ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                       quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
+                  <div  style="border:2px solid red;"onMouseOver="giveInformation()">
+                        <button type="button" onclick="changeTheme()" >Change theme</button>
+                    </div>
+
+            </article>
+            
+            
+        <script>
+            /**
+             * validates basic correctness of input in the form
+             */
+            function validateForm(){
+                var nameInput = document.getElementById("firstnameID");
+                var lastName = document.getElementById("lastnameID");
+    
+                validateSpecificInput(nameInput);
+                validateSpecificInput(lastName);
+            }
+            
+            /**
+             *  validates the length and content of an input
+             */
+            function validateSpecificInput(inputToVal){
+                if(inputToVal.value == "" ){
+                    alert(inputToVal.name + " should not be blank!");
+                }
+            }
+
+            /**
+             *  gives user information about the way how button works
+             */
+             function giveInformation(){
+                 //in my real project it will be more complex to avoid annoyin 'ok' btn
+                alert('Allows to change the theme of the site to dark/bright.');
+             }
+
+             /**
+              * changes the theme of the website
+              */ 
+             function changeTheme(){
+                 //it should be more complex and allow user to get back to white!
+                    document.body.style.background = "grey"; 
+             }
+             /**
+             *  changes the font size (zooms in)
+             */
+            function changeFontSizeZoomIn(){
+                    document.getElementById("textZoomID").style.fontSize="xx-large";
+            }
+             /**
+             *  changes the font size (zooms out)
+             */
+             function changeFontSizeZoomOut(){
+                    document.getElementById("textZoomID").style.fontSize="large";
+            }
+
+            /**
+             *  where are you going? 
+             */ 
+            function whereAreYouGoing(){
+                alert("Are you leaving? :(");
+            }
+        </script>
+        
+        
+        
+        <footer>
+            <i>Simple footer</i>
+        </footer>
+        
+    </body>
+    
+</html>
+

@@ -1,0 +1,21 @@
+
+1. Sprawdzenie poprawności procesu zakupu (czy strona 'przeprowadza za rękę' 
+użytkownika - coś na zasadzie WebFlow ze Springa oraz czy autoryzacja i 
+płatności są bezpieczne - "Spring security").
+
+2. Analiza atrakcyjności (frontend - czy nie są np. używane 'ostre' barwy a pastelowe)
+oraz dostępności strony dla osób niepełnosprawnych (np. Teksty alternatywne dla czytników).
+
+3. Czy dodawanie użytkowników, produktów jest intuicyjne i odporne na pomyłki (umyślne
+ataki; sprawdzenie działania i bezpieczeństwa formularzy).
+
+4. Czy zapisy poufnych danych (np. Haseł - np. has_secure_password w Rails) jest bezpieczne oraz czy autoryzacja np. Użytkowników działa poprawnie. 
+
+5. Czy testy są odpowiednio sformułowane testy (np. W Rails czy JUnit + Mockito w Javie) 
+Oraz czy są one 'zielone' (spełnione założenia projektowe postawione przez osobę kierującą
+/klienta). Dodatkowo analiza pokrycia kodu testami (w najlepszym wypadku 100 % - objętość\
+testów nawet większa niż objętość kodu - TDD) bądź czy pokrycie kodu testami jest 
+Na odpowiednim poziomie. 
+
+
+
